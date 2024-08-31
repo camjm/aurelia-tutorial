@@ -1,5 +1,18 @@
 <div> 
-  <h4>Hello, ${name}!</h4>
-
+  <h4 title.one-time="name">Hello, ${name}!</h4>
+  <p innerHtml.one-time="name"></p>
   <p><input type="text" value.bind="name"></p>
+  <p><input type="text" keydown.trigger="handleKeydown($event)"></p>
 </div>
+
+<div style="background-color: blue;" click.trigger="divClicked() & self">
+  <button click.trigger="buttonClicked()">Button</button>
+  <input type="checkbox" checked.bind="agree" change.trigger="onAgreementChange()" />
+</div>
+
+<ul click.trigger="listClicked($event)">
+  <li repeat.for="item of items" data-id="${item.id}">${item.name}</li>
+</ul>
+
+<input title="Search..." type="text" keydown.trigger:ctrl+enter="send()" input.trigger="search($event.target.value) & debounce:300">
+<button click.trigger:ctrl:stop:prevent="onCtrlClick()">Next page</button>
