@@ -2,6 +2,21 @@ export class HelloName{
   public name = 'Person';
   public agree = false;
   public items = [];
+  public promise1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(this.name)
+    }, 4000);
+
+  });
+  public promise2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error('error message!'));
+    }, 5000);
+
+  });
+  // Normally don't need this template reference; it's for when you need direct DOM manipulation (e.g. third-party libraries)
+  // you can do this declaratively, with less code, cleaner, without DOM queries to get elements
+  private myInput : HTMLInputElement;
 
   constructor() {
     this.items.push({
@@ -50,6 +65,11 @@ export class HelloName{
 
   public onCtrlClick() {
     console.log('onCtrlClick');
+  }
+
+  public validate() {
+    console.log('validate');
+    console.log(this.myInput);
   }
 
   public send() {

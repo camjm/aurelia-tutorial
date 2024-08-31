@@ -3,6 +3,7 @@
   <p innerHtml.one-time="name"></p>
   <p><input type="text" value.bind="name"></p>
   <p><input type="text" keydown.trigger="handleKeydown($event)"></p>
+  <p>${agree ? 'Agree!' : 'Not Agree!'}</p>
 </div>
 
 <div style="background-color: blue;" click.trigger="divClicked() & self">
@@ -14,5 +15,18 @@
   <li repeat.for="item of items" data-id="${item.id}">${item.name}</li>
 </ul>
 
-<input title="Search..." type="text" keydown.trigger:ctrl+enter="send()" input.trigger="search($event.target.value) & debounce:300">
-<button click.trigger:ctrl:stop:prevent="onCtrlClick()">Next page</button>
+<input ref="myInput" title="Search..." type="text" keydown.trigger:ctrl+enter="send()" input.trigger="search($event.target.value) & debounce:300">
+<button click.trigger:ctrl="onCtrlClick()">Next page</button>
+<button click.trigger:stop="validate()">Validate</button>
+
+<div promise.bind="promise1">
+  <p pending>The promise1 is not yet settled.</p>
+  <p then="data">The promise is resolved with ${data}.</p>
+  <p catch="err">This promise is rejected with ${err.message}.</p>
+ </div>
+
+ <div promise.bind="promise2">
+  <p pending>The promise2 is not yet settled.</p>
+  <p then="data">The promise is resolved with ${data}.</p>
+  <p catch="err">This promise is rejected with ${err.message}.</p>
+ </div>
