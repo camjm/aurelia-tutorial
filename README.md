@@ -4,11 +4,12 @@ This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new).
 
 ## Tutorials
 
-- https://docs.aurelia.io/
-- https://docs.aurelia.io/introduction/quick-start-guide
+- ~~https://docs.aurelia.io/~~
+- ~~https://docs.aurelia.io/introduction/quick-start-guide~~
 - https://docs.aurelia.io/tutorials/building-a-todo-application
 - https://docs.aurelia.io/tutorials/building-a-realtime-cryptocurrency-price-tracker
-- https://aurelia.io/docs/tutorials/creating-a-todo-app
+- https://docs.aurelia.io/tutorials/create-a-dashboard-using-dynamic-composition
+- https://docs.aurelia.io/tutorials/synthetic-view
 - https://aurelia.io/docs/tutorials/creating-a-contact-manager
 
 ## Start dev web server
